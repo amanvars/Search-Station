@@ -1,0 +1,153 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+
+ -->
+<html>
+  <head>
+    <title>Search Station</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="#" />
+    <style>
+        body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 100%;
+        background-color: #FFB85F;
+      }
+      .main{
+        font-size: 15px;
+        padding: 10px 14px 10px 14px;
+        background: #FCF4D9;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        position: relative;
+      }
+        .search_categories{
+        font-size: 13px;
+        padding: 10px 8px 10px 14px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .search_categories .select{
+
+        width: 80%;
+        background-position:80% center;
+      }
+
+      .search_categories .select select{
+        font-family: Roboto;
+        background: transparent;
+        line-height: 1;
+        border: 0;
+        padding: 0;
+        border-radius: 0;
+        width: 120%;
+        position: relative;
+        z-index: 10;
+        font-size: 1em;
+      }
+      input[type=text] {
+          width: 300px;
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 12px;
+
+          background-position: 10px 10px; 
+          background-repeat: no-repeat;
+          padding: 12px 20px 12px 4px;
+          -webkit-transition: width 0.4s ease-in-out;
+          transition: width 0.4s ease-in-out;
+      }
+
+
+      .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #8ED2C9;
+        border: none;
+        color: #000;
+        text-align: center;
+        font-size: 15px;
+        padding: 15px;
+        width: 140px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      .button:hover span {
+        padding-right: 25px;
+      }
+
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+    </style>
+
+   <script type="text/javascript" src="popup.js"></script> 
+  </head>
+<body>
+
+
+  <div class="header">
+    <div class = "icon" style="text-align:left">
+      <img src="icon.png" alt="Smiley face" height="80" width="80">
+    </div>
+    <div class="name" style="text-align:right; margin-top:-25%">
+      <h3>Search Station</h3>
+      <h5 style="margin-top:-7%">One stop to search all famous sites</h5>
+    </div>
+  </div>
+
+  <div class="main">
+      <h4>Enter Your Query</h4>
+
+  <div class="search_categories">
+     <div class="select">
+      <select name="search_categories" id="search_categories">
+        <option>Flipkart</option>
+        <option>Myntra</option>
+        <option>Amazon</option>
+        <option>Snapdeal</option>
+        <option>Jabong</option>
+        <option>Paytm</option>
+        <option>TataCliq</option>
+        <option>HomeShop18</option>
+        <option>Pepperfry</option>
+        <option>Shopclues</option>
+      </select>
+    </div>
+  </div>
+  <br>
+        <input type="text" name="s" placeholder="Enter your query" title="Search the site..." id="query" />
+        <br><br>
+        <button class="button" id="search" style="vertical-align:middle" ><span>Search it ! </span></button>
+       
+  </div>
+</body>
+</html>
+

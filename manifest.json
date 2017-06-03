@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Search Station",
+  "description": "This extension help users to search from various famous E-Commerce sites",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons":{
+  	"64":"icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
